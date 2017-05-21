@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" floating>Headquarters</ion-label>
+    <ion-input [(ngModel)]="current.buildings.headquarters" min="headquarters.min_level" max="headquarters.max_level" (ngModelChange)="checkRequirements(headquarters, current.buildings.headquarters)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Farm</ion-label>
+    <ion-input type="number" [(ngModel)]="current.buildings.farm" (ngModelChange)="checkMinMax(farm, current.buildings.farm)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Warehouse</ion-label>
+    <ion-input [(ngModel)]="current.buildings.warehouse"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>TAVERN</ion-label>
+    <ion-input [(ngModel)]="current.buildings.tavern" (ngModelChange)="checkRequirements(tavern, current.buildings.tavern)"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="getRequiredProvisions()">log</button>
+
+  <p>Total capacity : {{ current.total_capacity}}</p>
+  <p>Total provisions: {{ current.provisions_total}}</p>
+  <p>Used provisions: {{ current.provisions_used}}</p>
+  <p>Free provisions: {{ current.provisions_free}}</p>
+
+</ion-content>
