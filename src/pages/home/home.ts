@@ -23,7 +23,6 @@ export class HomePage {
     public provider: DataProvider
   ) {
     this.init();
-    console.log(this.current);
   }
 
   init() {
@@ -85,16 +84,19 @@ export class HomePage {
   //Checks input values and corrects them according to object min and max level
   //Returns INT
 
-  checkMinMax(building, level) {
-    console.log(this.building.min_level);
-    console.log(this.farm.max_level);
-    if (this.current.buildings.building < 0 || this.current.buildings.building == "") {
-      this.current.buildings.building = 0;
+  checkMinLevel(building, level) {
+    let name = building.name;
+    if (this.current.buildings[name] < building.min_level || this.current.buildings[name] == "") {
+      this.current.buildings[name] = building.min_level;
     } 
-    if (this.current.buildings.building > 30) {
-      this.current.buildings.building = 30;
+  }
+
+  checkMaxLevel(building, level) {
+    let name = building.name;
+    if (this.current.buildings[name] > building.max_level) {
+      this.current.buildings[name] = building.max_level;
+      console.log(this.current.buildings[name]);
     }
-    console.log(this.current.buildings.building);
   }
 
   //Checks required headquarters level for current building

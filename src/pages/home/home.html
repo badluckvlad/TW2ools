@@ -11,8 +11,8 @@
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" floating>Farm</ion-label>
-    <ion-input type="number" [(ngModel)]="current.buildings.farm" (ngModelChange)="checkMinMax(farm, current.buildings.farm)"></ion-input>
+    <ion-label color="primary">Farm</ion-label>
+    <ion-input type="number" max="30" min="0" [(ngModel)]="current.buildings.farm"></ion-input>
   </ion-item>
 
   <ion-item>
