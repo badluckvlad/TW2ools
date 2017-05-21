@@ -73,7 +73,7 @@ export class HomePage {
 
   //Checks all requirements for current building level and sets values accordingly
   //function(STR, INT)
-  //returns INT
+  //Returns INT
 
   checkRequirements(building, level) {
     this.checkRequiredHeadquarters(building);
@@ -81,6 +81,9 @@ export class HomePage {
     this.checkRequiredWarehouse(building, level);
     this.checkRequiredFarm(building, level);
   }
+
+  //Checks input values and corrects them according to object min and max level
+  //Returns INT
 
   checkMinMax(building, level) {
     console.log(this.building.min_level);
